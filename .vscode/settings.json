@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "c:\\Python\\Anaconda3\\envs\\cv\\python.exe"
+    "python.pythonPath": "/home/allisterb/venvs/cv/bin/python",
+    "python.linting.pylintArgs": ["--extension-pkg-whitelist=cv2"]
 }
