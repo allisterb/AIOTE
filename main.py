@@ -23,7 +23,7 @@ NUM_CLASSES = 90
 
 detection_graph = tf.Graph()
 with detection_graph.as_default():
-    od_graph_def = tf.GraphDef()
+    od_graph_def = tf.compat.v1.GraphDef()
     with tf.gfile.GFile(PATH_TO_CKPT, 'rb') as fid:
         serialized_graph = fid.read()
         od_graph_def.ParseFromString(serialized_graph)
@@ -51,7 +51,7 @@ def object_detection_function():
     size = 'waiting...'
     color = 'waiting...'
     with detection_graph.as_default():
-        with tf.Session(graph=detection_graph) as sess:
+        with tf.compat.v1.Session(graph=detection_graph) as sess:
 
             # Definite input and output Tensors for detection_graph
             image_tensor = detection_graph.get_tensor_by_name('image_tensor:0')
