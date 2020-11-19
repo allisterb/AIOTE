@@ -1,10 +1,11 @@
-import numpy as np
+"""Test the first attached camera device is working."""
+import sys
 import cv2 as cv
 
 cap = cv.VideoCapture(0)
 if not cap.isOpened():
     print("Cannot open camera")
-    exit()
+    sys.exit()
 while True:
     # Capture frame-by-frame
     ret, frame = cap.read()
